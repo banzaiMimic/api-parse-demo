@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.apiParser
+    ports:
+      - 8090:8090
+    depends_on:
+      - mongo
+    volumes:
+      - ./src:/rm-mafia/src
+      #- ./swagger.json:/rm-mafia/swagger.json
+      - ./.env.local:/rm-mafia/.env
+      - ./node_modules:/rm-mafia/node_modules
+    networks:
+      - rm-mafia
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}
+      - MONGO_INITDB_DATABASE=${MONGO_DB}
+    build:
+      context: .
+      dockerfile: Dockerfile.mongo
+    ports:
+      - 27018:27017
+    networks:
+      - rm-mafia
+networks:
+  rm-mafia:
+    driver: bridge

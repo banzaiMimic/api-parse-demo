@@ -1,0 +1,17 @@
+FROM node:21.1.0
+
+RUN mkdir -p /api-parser
+COPY ./yarn.lock /api-parser/
+COPY ./.env.local ./api-parser/.env
+COPY ./src /api-parser/src
+COPY ./package.json /api-parser/
+WORKDIR /api-parser
+#COPY *.json /api-parser/
+#COPY .npmrc /api-parser/
+
+RUN yarn
+
+EXPOSE 8090
+CMD ["yarn", "start"]
+
+#ENTRYPOINT ["tail", "-f", "/dev/null"]

@@ -1,0 +1,22 @@
+{
+  "name": "api-parse-demo",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "api parsing demo using node with fastify and mongodb",
+  "main": "src/index.js",
+  "repository": "git@github.com:banzaiMimic/api-parse-demo.git",
+  "author": "banzaiMimic <2274050+banzaiMimic@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "export $(cat .env | xargs) && node src/index.js"
+  },
+  "dependencies": {
+    "fastify": "^4.25.2"
+  },
+  "devDependencies": {
+    "@fastify/mongodb": "^8.0.0",
+    "fastify-cli": "^6.0.1",
+    "fastify-plugin": "^4.5.1"
+  }
+}
