@@ -2,11 +2,8 @@
 api parsing demo using node with fastify and mongodb
 
 ## deps
-- yarn (built on 1.22.19)
-- node (built on 21.1.0)
-- docker-compose (built on Docker Compose version v2.23.3-desktop.2)
-- docker (Docker Desktop if on Windows, built on Docker version 24.0.7, build afdd53b)
 - WSL2 with hyperv enabled (if on Windows, built on WSL version: 2.0.9.0)
+- Docker Desktop if on Windows
 
 ## quickstart
 ```
@@ -35,4 +32,16 @@ docker-compose build
 #shell into docker container (note: you only need first few chars of containerId)
 docker exec -it <containerId> sh
 
+```
+
+## local deps (outside docker)
+```
+- yarn (built on 1.22.19)
+- node (built on 21.1.0)
+```
+
+## docker versions used
+```
+  - docker-compose (built on Docker Compose version v2.23.3-desktop.2)
+  - docker (built on Docker version 24.0.7, build afdd53b)
 ```
