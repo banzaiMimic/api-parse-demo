@@ -37,7 +37,7 @@ docker exec -it <containerId> sh
 ## local deps (outside docker)
 ```
 - yarn (built on 1.22.19)
-- node (built on 21.1.0)
+- node (built on 21.1.0) (recommend use nvm to install)
 ```
 
 ## docker versions used
